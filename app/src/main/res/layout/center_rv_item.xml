@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="#CFE2EB"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,7 +20,8 @@
             android:layout_margin="3dp"
             android:drawableLeft="@drawable/ic_baseline_local_hospital_24"
             android:drawablePadding="4dp"
-            android:padding="3dp"
+            android:textSize="20sp"
+            android:padding="5dp"
             android:text="Center Name"
             android:textColor="@color/black" />
 
@@ -30,7 +34,8 @@
             android:layout_margin="3dp"
             android:drawableLeft="@drawable/ic_baseline_local_hospital_24"
             android:drawablePadding="4dp"
-            android:padding="3dp"
+            android:textSize="20sp"
+            android:padding="5dp"
             android:text="Center Address"
             android:textColor="@color/black" />
 
@@ -43,7 +48,8 @@
             android:layout_margin="3dp"
             android:drawableLeft="@drawable/ic_baseline_access_time_filled_24"
             android:drawablePadding="4dp"
-            android:padding="3dp"
+            android:textSize="20sp"
+            android:padding="5dp"
             android:text="Timings"
             android:textColor="@color/black" />
 
@@ -63,8 +69,9 @@
                 android:layout_margin="3dp"
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_virus"
+                android:textSize="20sp"
                 android:drawablePadding="4dp"
-                android:padding="3dp"
+                android:padding="5dp"
                 android:text="Vaccine Name"
                 android:textColor="@color/black" />
 
@@ -76,8 +83,9 @@
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:padding="3dp"
+                android:padding="5dp"
                 android:text="Fee Type"
+                android:textSize="20sp"
                 android:textAlignment="center"
                 android:textColor="@color/black" />
         </LinearLayout>
@@ -98,7 +106,8 @@
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:padding="3dp"
+                android:padding="5dp"
+                android:textSize="20sp"
                 android:text="Age Limit"
                 android:textAlignment="center"
                 android:textColor="@color/black" />
@@ -111,7 +120,8 @@
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:padding="3dp"
+                android:textSize="20sp"
+                android:padding="5dp"
                 android:text="Avaliablity"
                 android:textAlignment="center"
                 android:textColor="@color/black" />

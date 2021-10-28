@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="50dp"
+    android:background="#DEEAEF"
     >
 
     <!--edit text for entering the pin code-->
@@ -14,9 +16,12 @@
         android:layout_margin="5dp"
         android:layout_toStartOf="@id/idBtnSearch"
         android:layout_toLeftOf="@id/idBtnSearch"
-        android:textSize="24sp"
+        android:textSize="35sp"
         android:hint="Enter PinCode"
-        android:inputType="number" />
+        android:autofillHints="postalCode"
+        android:padding="3dp"
+        android:inputType="number"
+        />
 
     <!--button for searching the data-->
     <Button
@@ -27,6 +32,8 @@
         android:layout_alignParentRight="true"
         android:layout_margin="5dp"
         android:background="@color/purple_200"
+        android:textSize="20sp"
+        android:padding="3dp"
         android:text="Search"
         android:textAllCaps="false" />
 
@@ -44,6 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/idEdtPinCode"
+        android:textSize="24sp"
         tools:listitem="@layout/center_rv_item" />
 
 </RelativeLayout>
