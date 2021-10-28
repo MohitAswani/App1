@@ -18,12 +18,11 @@ class CenterRVAdapter(private val centerList: List<CenterRvModal>) :
     class CenterRVViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // on below line we are initializing all our text views along with  its ids.
         val centerNameTV: TextView = itemView.findViewById(R.id.idTVCenterName)
-        val centerAddressTV: TextView = itemView.findViewById(R.id.idTVCenterAddress)
-        val centerTimings: TextView = itemView.findViewById(R.id.idTVCenterTimings)
-        val vaccineNameTV: TextView = itemView.findViewById(R.id.idTVVaccineName)
-        val centerAgeLimitTV: TextView = itemView.findViewById(R.id.idTVAgeLimit)
-        val centerFeeTypeTV: TextView = itemView.findViewById(R.id.idTVFeeType)
-        val avalabilityTV: TextView = itemView.findViewById(R.id.idTVAvaliablity)
+        val DistrictTV: TextView = itemView.findViewById(R.id.idTVDistrictName)
+        val StateTV: TextView = itemView.findViewById(R.id.idTVStateName)
+        val LocationTV: TextView = itemView.findViewById(R.id.idTVLocation)
+        val Pincode : TextView = itemView.findViewById(R.id.idTVPincode)
+
     }
 
     // below method is for on Create View Holder.
@@ -58,11 +57,9 @@ class CenterRVAdapter(private val centerList: List<CenterRvModal>) :
         // after getting current item we are setting
         // data from our list to our text views.
         holder.centerNameTV.text = currentItem.centerName
-        holder.centerAddressTV.text = currentItem.centerAddress
-        holder.centerTimings.text = ("From : " + currentItem.centerFromTime + " To : " + currentItem.centerToTime)
-        holder.vaccineNameTV.text = currentItem.vaccineName
-        holder.centerAgeLimitTV.text = "Age Limit : " + currentItem.ageLimit.toString()
-        holder.centerFeeTypeTV.text = currentItem.fee_type
-        holder.avalabilityTV.text = "Availability : " + currentItem.availableCapacity.toString()
+       holder.DistrictTV.text=currentItem.District_name
+        holder.StateTV.text=currentItem.State_name
+        holder.LocationTV.text=currentItem.Location
+        holder.Pincode.text=currentItem.Pincode
     }
 }

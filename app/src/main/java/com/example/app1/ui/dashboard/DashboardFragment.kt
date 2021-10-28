@@ -1,9 +1,16 @@
 package com.example.app1.ui.dashboard
 
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
+import android.os.Looper
+import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +20,9 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +30,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.app1.databinding.FragmentDashboardBinding
+import com.google.android.gms.location.*
 import org.json.JSONException
 import java.util.*
 import kotlin.collections.ArrayList
@@ -30,7 +40,6 @@ class DashboardFragment : Fragment() {
     private lateinit var searchButton: Button
 
     // creating variable for our edit text.
-    lateinit var pinCodeEdt: EditText
 
     // creating a variable for our recycler view.
     lateinit var centersRV: RecyclerView
@@ -50,7 +59,23 @@ class DashboardFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private  var lati:String=""
+    private  var long:String=""
+    lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+    private val callback= object: LocationCallback(){
+        override fun onLocationAvailability(p0: LocationAvailability?) {
+            super.onLocationAvailability(p0)
+        }
 
+        override fun onLocationResult(result: LocationResult?) {
+            val lastLocation= result?.lastLocation
+            Log.d("TAG", "onLocationResult: ${lastLocation?.longitude.toString()}")
+            Log.d("TAG", "onLocationResult: ${lastLocation?.latitude.toString()}")
+             lati=lastLocation?.latitude.toString()
+             long=lastLocation?.longitude.toString()
+            super.onLocationResult(result)
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -59,11 +84,14 @@ class DashboardFragment : Fragment() {
         dashboardViewModel =
             ViewModelProvider(this).get(DashboardViewModel::class.java)
 
+        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(activity)
+
+        onGPS()
+
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         searchButton = binding.idBtnSearch
-        pinCodeEdt = binding.idEdtPinCode
         centersRV = binding.centersRV
         loadingPB = binding.idPBLoading
         centerList = ArrayList<CenterRvModal>()
@@ -71,57 +99,17 @@ class DashboardFragment : Fragment() {
         // on below line we are adding on
         // click listener to our button.
         searchButton.setOnClickListener {
-
+            fetchLocation()
             // inside on click listener we are getting data from
             // edit text and creating a val for ite on below line.
-            val pinCode = pinCodeEdt.text.toString()
+
 
             // on below line we are validating
             // our pin code as 6 digit or not.
-            if (pinCode.length != 6) {
 
-                // this method is called when users enter invalid pin code.
-                Toast.makeText(activity, "Please enter valid pin code", Toast.LENGTH_SHORT)
-                    .show()
-            } else {
-
-                // if the pincode is correct.
-                // first of all we are clearing our array list this
-                // will clear the data in it if already present.
-                (centerList as ArrayList<CenterRvModal>).clear()
-
-                // on below line we are getting instance of our calendar.
-                val c = Calendar.getInstance()
-
-                // on below line we are getting our current year, month and day.
-                val year = c.get(Calendar.YEAR)
-                val month = c.get(Calendar.MONTH)
-                val day = c.get(Calendar.DAY_OF_MONTH)
-
-                // on below line we are creating our date picker dialog.
-                val dpd = DatePickerDialog(
-                    this.requireContext(),
-                    DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                        // after that we are making our progress bar as visible.
-                        loadingPB.setVisibility(View.VISIBLE)
-
-                        // on below line we are creating a date string for our date
-                        val dateStr: String = """$dayOfMonth - ${monthOfYear + 1} - $year"""
-
-                        // on below line we are calling a method to get
-                        // the appointment info for vaccination centers
-                        // and we are passing our pin code to it.
-                        getAppointments(pinCode, dateStr)
-                    },
-                    year,
-                    month,
-                    day
-                )
-                // calling a method to display
-                // our datepicker dialog.
-                dpd.show()
-            }
+            getAppointments()
         }
+
         return root
     }
 
@@ -131,9 +119,9 @@ class DashboardFragment : Fragment() {
     }
 
     // below is the method for getting data from API.
-    private fun getAppointments(pinCode: String, date: String) {
+    private fun getAppointments() {
         val url =
-            "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + pinCode + "&date=" + date
+            "https://cdn-api.co-vin.in/api/v2/appointment/centers/public/findByLatLong?lat="+lati+"&long="+long
         val queue = Volley.newRequestQueue(activity)
 
         // on below line we are creating a request
@@ -164,10 +152,10 @@ class DashboardFragment : Fragment() {
                         // on below line we are getting data from our session
                         // object and we are storing that in a different variable.
                         val centerName: String = centerObj.getString("name")
-                        val centerAddress: String = centerObj.getString("address")
-                        val centerFromTime: String = centerObj.getString("from")
-                        val centerToTime: String = centerObj.getString("to")
-                        val fee_type: String = centerObj.getString("fee_type")
+                        val District_name: String = centerObj.getString("district_name")
+                        val State_name: String = centerObj.getString("state_name")
+                        val Location: String = centerObj.getString("location")
+                        val Pincode:String = centerObj.getString("pincode")
 
                         // on below line we are creating a variable for our session object
                         val sessionObj = centerObj.getJSONArray("sessions").getJSONObject(0)
@@ -180,13 +168,10 @@ class DashboardFragment : Fragment() {
                         // a variable for it as center.
                         val center = CenterRvModal(
                             centerName,
-                            centerAddress,
-                            centerFromTime,
-                            centerToTime,
-                            fee_type,
-                            ageLimit,
-                            vaccineName,
-                            avaliableCapacity
+                            District_name,
+                            State_name,
+                            Location,
+                            Pincode
                         )
                         // after that we are passing this modal to our list on the below line.
                         centerList = centerList + center
@@ -202,7 +187,7 @@ class DashboardFragment : Fragment() {
                     centersRV.adapter = centerRVAdapter
 
                     // on the below line we are notifying our adapter as the data is updated.
-                    centerRVAdapter.notifyDataSetChanged()
+
 
                 } catch (e: JSONException) {
                     // below line is for handling json exception.
@@ -221,4 +206,63 @@ class DashboardFragment : Fragment() {
         // our request to our queue.
         queue.add(request)
     }
+    fun onGPS() {
+
+        Log.d("TAG", "onGPS: ${isLocationEnabled()}")
+
+        if (!isLocationEnabled()) {
+            startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+        } else {
+            fetchLocation()
+        }
+
+
+    }
+
+    private fun fetchLocation() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            if (ActivityCompat.checkSelfPermission(
+                    this.requireActivity(),
+                    android.Manifest.permission.ACCESS_FINE_LOCATION
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                   this.requireActivity(),
+                    arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                    200
+                )
+                return
+            }else{
+                requestLocation()
+            }
+
+
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun requestLocation() {
+        Log.d("TAG", "requestLocation: ")
+        val requestLocation= LocationRequest()
+        requestLocation.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        requestLocation.interval = 0
+        requestLocation.fastestInterval = 0
+        requestLocation.numUpdates = 1
+        fusedLocationProviderClient.requestLocationUpdates(
+            requestLocation,callback, Looper.myLooper()
+        )
+
+    }
+
+
+    fun isLocationEnabled(): Boolean {
+        val locationManager = activity?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
+            LocationManager.NETWORK_PROVIDER
+        )
+    }
+
+
+
 }
