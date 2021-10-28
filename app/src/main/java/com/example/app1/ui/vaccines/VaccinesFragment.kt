@@ -35,6 +35,7 @@ class VaccinesFragment : Fragment() {
             view.findNavController().navigate(R.id.action_navigation_home_to_covaxinData);
         }
 
+
         val root: View = binding.root
 
         return root
