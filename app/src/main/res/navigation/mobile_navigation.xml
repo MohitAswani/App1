@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/covaxinData"
         android:name="com.example.app1.VaccineData.CovaxinData"
-        android:label="fragment_covaxin_data"
+        android:label="Covaxin"
         tools:layout="@layout/fragment_covaxin_data" />
 
 </navigation>
