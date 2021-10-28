@@ -1,4 +1,4 @@
-package com.example.app1.ui.notifications
+package com.example.app1.ui.vaccines
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,14 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.app1.R
-import com.example.app1.databinding.FragmentNotificationsBinding
+import com.example.app1.databinding.FragmentVaccinesBinding
 
-class NotificationsFragment : Fragment() {
+class VaccinesFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
-    private var _binding: FragmentNotificationsBinding? = null
+    private lateinit var vaccinesViewModel: VaccinesViewModel
+    private var _binding: FragmentVaccinesBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,16 +26,17 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
+        vaccinesViewModel =
+            ViewModelProvider(this).get(VaccinesViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentVaccinesBinding.inflate(inflater, container, false)
+
+        binding.cardView1.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_navigation_home_to_covaxinData);
+        }
+
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 

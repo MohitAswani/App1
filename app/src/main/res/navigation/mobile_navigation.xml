@@ -7,19 +7,23 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.app1.ui.home.HomeFragment"
+        android:name="com.example.app1.ui.vaccines.VaccinesFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_vaccines" >
+        <action
+            android:id="@+id/action_navigation_home_to_covaxinData"
+            app:destination="@id/covaxinData" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.app1.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
-
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.app1.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/covaxinData"
+        android:name="com.example.app1.VaccineData.CovaxinData"
+        android:label="fragment_covaxin_data"
+        tools:layout="@layout/fragment_covaxin_data" />
+
 </navigation>
