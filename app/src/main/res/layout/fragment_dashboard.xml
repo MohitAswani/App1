@@ -14,6 +14,7 @@
         android:layout_margin="5dp"
         android:layout_toStartOf="@id/idBtnSearch"
         android:layout_toLeftOf="@id/idBtnSearch"
+        android:textSize="24sp"
         android:hint="Enter PinCode"
         android:inputType="number" />
 
