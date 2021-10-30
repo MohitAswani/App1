@@ -1,48 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VaccineData.CovaxinData"
     android:layout_marginBottom="60dp">
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingStart="8sp"
-        android:paddingEnd="8sp"
-        >
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="243dp"
-            android:src="@drawable/img_2"
-            tools:ignore="ImageContrastCheck"
-            android:requiresFadingEdge="vertical"
-            />
-
-        <TextView
-            android:id="@+id/textView1"
+        tools:ignore="UselessParent">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:text="@string/covaxin"
-            android:gravity="center"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="243dp"
+                android:src="@drawable/img_2"
+                tools:ignore="ImageContrastCheck"
+                android:requiresFadingEdge="vertical"
+                />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="@string/info_covaxin"
-            android:gravity="left"
-            android:lineSpacingExtra="14.5dp"
-            />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:text="@string/covaxin"
+                android:gravity="center"
+                />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="@string/info_covaxin"
+                android:gravity="left"
+                android:lineSpacingExtra="14.5dp"
+                />
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtube_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:showSeekBar="true"
+                app:showYouTubeButton="false"
+                app:showVideoCurrentTime="true"
+                app:showVideoDuration="true"
+                app:autoPlay="false"
+                app:showFullScreenButton="true"
+                />
 
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

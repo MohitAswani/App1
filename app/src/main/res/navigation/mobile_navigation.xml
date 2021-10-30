@@ -40,9 +40,5 @@
         android:name="com.example.app1.Menuelements.RulesFragment"
         android:label="Contant Us"
         tools:layout="@layout/fragment_rules" />
-    <fragment
-        android:id="@+id/navigation_pincode"
-        android:name="com.example.app1.pincode.PincodeFragment"
-        android:label="Search By Pincode" />
 
 </navigation>

@@ -11,9 +11,5 @@
         android:icon="@drawable/ic_baseline_local_hospital_24"
         android:title="Center's near me" />
 
-    <item
-        android:id="@+id/navigation_pincode"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Center by pincode" />
 
 </menu>
