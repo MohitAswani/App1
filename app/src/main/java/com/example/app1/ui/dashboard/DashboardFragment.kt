@@ -71,8 +71,8 @@ class DashboardFragment : Fragment() {
             val lastLocation= result?.lastLocation
             Log.d("TAG", "onLocationResult: ${lastLocation?.longitude.toString()}")
             Log.d("TAG", "onLocationResult: ${lastLocation?.latitude.toString()}")
-             lati=lastLocation?.latitude.toString()
-             long=lastLocation?.longitude.toString()
+            lati=lastLocation?.latitude.toString()
+            long=lastLocation?.longitude.toString()
             super.onLocationResult(result)
         }
     }
@@ -228,7 +228,7 @@ class DashboardFragment : Fragment() {
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
                 ActivityCompat.requestPermissions(
-                   this.requireActivity(),
+                    this.requireActivity(),
                     arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
                     200
                 )

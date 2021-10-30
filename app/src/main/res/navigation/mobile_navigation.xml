@@ -25,5 +25,20 @@
         android:name="com.example.app1.VaccineData.CovaxinData"
         android:label="Covaxin"
         tools:layout="@layout/fragment_covaxin_data" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.app1.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/fragmentAboutme"
+        android:name="com.example.app1.FragmentAboutme"
+        android:label="fragment_aboutme"
+        tools:layout="@layout/fragment_aboutme" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.app1.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
 
 </navigation>

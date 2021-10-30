@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
 
     <!--edit text for entering the pin code-->
     <!--button for searching the data-->
-    <Button
-        android:id="@+id/idBtnSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="5dp"
-        android:background="@color/purple_200"
-        android:text="Search"
-        android:textAllCaps="false" />
 
     <!--progress bar for loading indicator-->
+    <Button
+        android:id="@+id/idBtnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_200"
+        android:text="Search"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
     <ProgressBar
         android:id="@+id/idPBLoading"
         android:layout_width="wrap_content"
@@ -32,6 +32,7 @@
         android:id="@+id/centersRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/center_rv_item" />
+        tools:listitem="@layout/center_rv_item"
+        />
 
-</RelativeLayout>
+</LinearLayout>
