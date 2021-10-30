@@ -55,6 +55,11 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.App.rounded" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+
     <style name="BioText" parent="NameStyle">
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:padding">@dimen/small_padding</item>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.app1.ui.vaccines.VaccinesFragment"
+        android:name="com.example.app1.vaccines.VaccinesFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_vaccines" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.app1.ui.dashboard.DashboardFragment"
+        android:name="com.example.app1.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
@@ -27,18 +27,22 @@
         tools:layout="@layout/fragment_covaxin_data" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.app1.AboutFragment"
-        android:label="fragment_about"
+        android:name="com.example.app1.Menuelements.AboutFragment"
+        android:label="About App"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/fragmentAboutme"
         android:name="com.example.app1.FragmentAboutme"
-        android:label="fragment_aboutme"
+        android:label="About us"
         tools:layout="@layout/fragment_aboutme" />
     <fragment
         android:id="@+id/rulesFragment"
-        android:name="com.example.app1.RulesFragment"
-        android:label="fragment_rules"
+        android:name="com.example.app1.Menuelements.RulesFragment"
+        android:label="Contant Us"
         tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/navigation_pincode"
+        android:name="com.example.app1.pincode.PincodeFragment"
+        android:label="Search By Pincode" />
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.app1.ui.dashboard
+package com.example.app1.dashboard
 
 data class CenterRvModal(
 

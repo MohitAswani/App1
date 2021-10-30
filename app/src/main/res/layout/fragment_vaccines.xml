@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
-    tools:context=".ui.vaccines.VaccinesFragment"
+    tools:context=".vaccines.VaccinesFragment"
     android:background="@drawable/imgback"
     >
 
@@ -30,7 +30,7 @@
                 android:layout_margin="16dp"
                 app:cardCornerRadius="50dp"
                 app:cardBackgroundColor="@color/white"
-                app:elevation="50dp"
+                app:cardElevation="50dp"
                 >
 
                 <LinearLayout
@@ -78,7 +78,8 @@
                 android:layout_margin="16dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="50dp"
-                app:elevation="50dp">
+                app:cardElevation="50dp"
+            >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -91,8 +92,8 @@
                         android:layout_height="160dp"
                         android:contentDescription="@string/displayimage"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img"
-                        tools:src="@drawable/img" />
+                        android:src="@drawable/aboutimg"
+                        tools:src="@drawable/aboutimg" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -123,7 +124,7 @@
                 android:layout_margin="16dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="50dp"
-                app:elevation="50dp">
+                app:cardElevation="50dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -168,7 +169,7 @@
                 android:layout_margin="16dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="50dp"
-                app:elevation="50dp">
+                app:cardElevation="50dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -214,7 +215,7 @@
                 android:layout_margin="16dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="50dp"
-                app:elevation="50dp">
+                app:cardElevation="50dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -261,7 +262,7 @@
                 android:layout_margin="16dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="50dp"
-                app:elevation="50dp">
+                app:cardElevation="50dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -307,7 +308,7 @@
                 android:layout_margin="16dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="50dp"
-                app:elevation="50dp"
+                app:cardElevation="50dp"
 
                 >
 

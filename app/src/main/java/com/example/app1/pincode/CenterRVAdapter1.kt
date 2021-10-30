@@ -1,4 +1,4 @@
-package com.example.app1.ui.dashboard
+package com.example.app1.pincode
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,19 +10,21 @@ import com.example.app1.R
 // on below line we are creating our adapter class
 // in this class we are passing our array list
 // and our View Holder class which we have created.
-class CenterRVAdapter(private val centerList: List<CenterRvModal>) :
-    RecyclerView.Adapter<CenterRVAdapter.CenterRVViewHolder>() {
+class CenterRVAdapter1(private val centerList: List<CenterRVModal1>) :
+    RecyclerView.Adapter<CenterRVAdapter1.CenterRVViewHolder>() {
 
     // on below line we are creating our view holder class which will
     // be used to initialize each view of our layout file.
     class CenterRVViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // on below line we are initializing all our text views along with  its ids.
-        val centerNameTV: TextView = itemView.findViewById(R.id.idTVCenterName)
-        val DistrictTV: TextView = itemView.findViewById(R.id.idTVDistrictName)
-        val StateTV: TextView = itemView.findViewById(R.id.idTVStateName)
-        val LocationTV: TextView = itemView.findViewById(R.id.idTVLocation)
-        val Pincode : TextView = itemView.findViewById(R.id.idTVPincode)
 
+        val centerNameTV: TextView = itemView.findViewById(R.id.idTVCenterName)
+        val centerAddressTV: TextView = itemView.findViewById(R.id.idTVCenterAddress)
+        val centerTimings: TextView = itemView.findViewById(R.id.idTVCenterTimings)
+        val vaccineNameTV: TextView = itemView.findViewById(R.id.idTVVaccineName)
+        val centerAgeLimitTV: TextView = itemView.findViewById(R.id.idTVAgeLimit)
+        val centerFeeTypeTV: TextView = itemView.findViewById(R.id.idTVFeeType)
+        val avalabilityTV: TextView = itemView.findViewById(R.id.idTVAvaliablity)
     }
 
     // below method is for on Create View Holder.
@@ -57,9 +59,11 @@ class CenterRVAdapter(private val centerList: List<CenterRvModal>) :
         // after getting current item we are setting
         // data from our list to our text views.
         holder.centerNameTV.text = currentItem.centerName
-       holder.DistrictTV.text=currentItem.District_name
-        holder.StateTV.text=currentItem.State_name
-        holder.LocationTV.text=currentItem.Location
-        holder.Pincode.text=currentItem.Pincode
+        holder.centerAddressTV.text = currentItem.centerAddress
+        holder.centerTimings.text = ("From : " + currentItem.centerFromTime + " To : " + currentItem.centerToTime)
+        holder.vaccineNameTV.text = currentItem.vaccineName
+        holder.centerAgeLimitTV.text = "Age Limit : " + currentItem.ageLimit.toString()
+        holder.centerFeeTypeTV.text = currentItem.fee_type
+        holder.avalabilityTV.text = "Availability : " + currentItem.availableCapacity.toString()
     }
 }

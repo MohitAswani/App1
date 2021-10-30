@@ -1,4 +1,4 @@
-package com.example.app1.ui.vaccines
+package com.example.app1.vaccines
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
