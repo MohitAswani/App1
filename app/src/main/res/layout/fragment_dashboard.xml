@@ -25,6 +25,7 @@
         android:layout_marginStart="10dp"
         />
 
+
     <!--button for searching the data-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/idBtnSearch"

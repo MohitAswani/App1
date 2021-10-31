@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App1</string>
+    <string name="app_name">Vaccine Maitri</string>
     <string name="title_home">Vaccines</string>
     <string name="title_dashboard">Vaccine near me</string>
     <string name="displayimage">displayImage</string>
@@ -13,7 +13,7 @@
     <string name="position">Position</string>
     <string name="select_an_avatar">Select an Avatar</string>
     <string name="android_trivia">Android Trivia</string>
-    <string name="about_text">App1 is a app made to remove all the misconceptions and fears regarding the approved Covid-19 vaccines 💉. App1 help you pick and choose the vaccine which might be best option for you. It also helps you know about the side affects of vaccines and maintains utmost transparency with you 😊.</string>
+    <string name="about_text">Vaccine Maitri is a app made to remove all the misconceptions and fears regarding the approved Covid-19 vaccines 💉. Vaccine Maitri helps you pick and choose the vaccine which might be best option for you. It also helps you know about the side affects of vaccines and maintains utmost transparency with you 😊.</string>
     <string name="rules_text">Select the answer from the options given. Each time you get an answer correct, you advance to the next question.\n\nIf you get the answer wrong, your game ends! You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
     <string name="rules">Rules</string>
     <string name="aboutApp">About App</string>
