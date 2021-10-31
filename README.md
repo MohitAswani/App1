@@ -4,7 +4,8 @@ Vaccine Maitri is a app made to remove all the misconceptions and fears regardin
 Vaccine Maitri helps you pick and choose the vaccine which might be best option for you. It also helps you know about the side affects of vaccines and maintains 
 utmost transparency with you 😊. Also it allows you to find the vaccine centers near you and you can just walkin and get the shot.
 
-## Link to APK: https://drive.google.com/drive/folders/14k9QnxZ4DOecXy2tTDlfEUuqYyMy2Xw7
+## Link to APK
+https://drive.google.com/drive/folders/14k9QnxZ4DOecXy2tTDlfEUuqYyMy2Xw7
 
 ## Team name: fox#01
 
