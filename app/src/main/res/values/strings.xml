@@ -13,7 +13,7 @@
     <string name="position">Position</string>
     <string name="select_an_avatar">Select an Avatar</string>
     <string name="android_trivia">Android Trivia</string>
-    <string name="about_text">App1 is a app made to remove all the misconceptions and fears regarding the approved Covid-19 vaccine. App1 help you pick and choose the vaccine which might be best option for you. It also helps you know about the side affects of the vaccine and maintains utmost transparency with you.</string>
+    <string name="about_text">App1 is a app made to remove all the misconceptions and fears regarding the approved Covid-19 vaccines 💉. App1 help you pick and choose the vaccine which might be best option for you. It also helps you know about the side affects of vaccines and maintains utmost transparency with you 😊.</string>
     <string name="rules_text">Select the answer from the options given. Each time you get an answer correct, you advance to the next question.\n\nIf you get the answer wrong, your game ends! You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
     <string name="rules">Rules</string>
     <string name="aboutApp">About App</string>
@@ -29,9 +29,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="titlescreentext">Ready ? Press play</string>
     <string name="exitText">EXIT</string>
-    <string name="bio">Hi , 👋.We are fox#01 and we make apps that strive to change the world and touch peoples heart.  We are a team of curious , exquisite and integrous developers. We would like to thank you for downloading our app and your feedback would be much appreciated. For feedback or any ideas you would like us to implement contact us at : </string>
+    <string name="bio">Hi , 👋.We are fox#01 and we make apps that strive to change the world and touch peoples heart.  We are a team of curious , exquisite and integrous developers. We would like to thank you 🙏 for downloading our app and your feedback would be much appreciated. For feedback or any ideas you would like us to implement contact us at : </string>
     <string name="mohit_email">aswanim96@gmial.com</string>
     <string name="akshat_email">akshat69@gmial.com</string>
     <string name="AboutText">About</string>
     <string name="AboutMeText">About Me</string>
+    <string name="lindkin1"><a href="https://www.linkedin.com/in/mohit-aswani-345ab31bb/">Mohit Aswani</a></string>
+    <string name="lindkin2"><a href="https://www.linkedin.com/in/mohit-aswani-345ab31bb/">Akshat Saxena</a></string>
+    <string name="side_effects_covaxin">Some mild symptoms AEFIs may occur like injection site pain, headache, fatigue, fever, body ache, abdominal pain, nausea and vomiting, dizziness-giddiness, tremor, sweating, cold, cough and injection site swelling. No other vaccine-related serious adverse effects have been reported.</string>
+    <string name="adverse_effect">In case of minor adverse effects such as injection site pain, tenderness, malaise, pyrexia, etc., paracetamol may be used to alleviate the symptoms.</string>
 </resources>

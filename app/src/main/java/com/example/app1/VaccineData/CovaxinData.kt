@@ -15,6 +15,8 @@ import androidx.annotation.NonNull
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 
 import android.R
+import android.content.Intent
+import android.net.Uri
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 
@@ -36,15 +38,23 @@ class CovaxinData : Fragment() {
 
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                val videoId = "FtX0mLCqKXU"
+                val videoId = "tfbppBJ4Pyw"
                 youTubePlayer.loadVideo(videoId, 0f)
             }
         })
 
+        binding.textView7.setOnClickListener{GetUrlFromIntent(it,"https://www.bharatbiotech.com/images/covaxin/covaxin-factsheet.pdf")}
+        binding.textView9.setOnClickListener{GetUrlFromIntent(it,"https://www.bharatbiotech.com/covaxin.html")}
         val root: View = binding.root
         return root
 
 
+    }
+
+    fun GetUrlFromIntent(view: View?,url:String) {
+        val i = Intent(Intent.ACTION_VIEW)
+        i.data = Uri.parse(url)
+        startActivity(i)
     }
 
 }

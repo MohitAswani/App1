@@ -29,32 +29,32 @@
                     style="@style/BioText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
+                    android:fontFamily="@font/architects_daughter"
                     android:text="@string/bio"
+                    android:textColor="#010B1A"
                     android:textAlignment="textStart" />
 
                 <TextView
-                    android:id="@+id/editTextTextEmailAddress"
+                    android:id="@+id/textViewLinkDin1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mohit_email"
-                    android:textColor="@color/light_blue_600"
                     android:layout_margin="20dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/lindkin1"
+                    android:textColor="@color/light_blue_600"
                     android:textSize="25sp"
-                    android:textStyle="italic"
-                    />
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <TextView
-                    android:id="@+id/editTextTextEmailAddress2"
+                    android:id="@+id/textViewLinkDin2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/akshat_email"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:textColor="@color/light_blue_600"
                     android:layout_margin="20dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/lindkin2"
+                    android:textColor="@color/light_blue_600"
                     android:textSize="25sp"
-                    android:textStyle="italic"
-                    />
+                    tools:ignore="SpeakableTextPresentCheck" />
 
             </LinearLayout>
         </ScrollView>
