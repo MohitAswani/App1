@@ -18,14 +18,9 @@ Enable the permission to install applications from unknown sources and install t
 
 ## Screenshot of the app:
 
-![alt text](https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/1.jpeg)
-
-![alt text](https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/2.jpeg)
-
-![alt text](https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/3.jpeg)
-
-![alt text](https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/4.jpeg)
-
-![alt text](https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/5.jpeg)
-
-![alt text](https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/6.jpeg)
+<img width=30%  alt="Github" src="https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/1.jpeg" />
+<img width=30%  alt="Github" src="https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/2.jpeg" />
+<img width=30%  alt="Github" src="https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/3.jpeg" />
+<img width=30%  alt="Github" src="https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/4.jpeg" />
+<img width=30%  alt="Github" src="https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/5.jpeg" />
+<img width=30%  alt="Github" src="https://github.com/MohitAswani/Vaccine-Maitri/blob/master/Screenshots/6.jpeg" />
